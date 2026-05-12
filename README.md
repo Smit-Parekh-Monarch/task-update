@@ -38,7 +38,7 @@ Run `/task-update` at the end of your day. Claude collects everything — tasks 
 ## Install
 
 ```bash
-/plugins install github:SmitParekh84/task-update
+/plugins install github:Smit-Parekh-Monarch/task-update
 ```
 
 After installing, type `/task-update` in any Claude Code session.
