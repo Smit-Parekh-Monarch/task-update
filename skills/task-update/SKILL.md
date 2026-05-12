@@ -11,7 +11,17 @@ Log your daily work in one command. At end of session, Claude collects everythin
 
 1. **Load carried tasks.** Read `~/.claude/worklog-state.json`. If it exists, prepend any in-progress tasks from prior sessions to the list, showing their accumulated hours.
 
-2. **Read session tasks.** Use the TaskList tool to get all tasks from this session (any status).
+2. **Detect session tasks.** Use the TaskList tool to collect all tasks from this session. For each task, capture:
+   - **Subject** — the task title (what was worked on)
+   - **Description** — detail of what was done
+   - **Status** — `completed`, `in_progress`, or `pending`
+   - **Effort signal** — subject keywords used later for hour distribution
+
+   Detection rules:
+   - Include ALL tasks regardless of status (completed, in-progress, even pending)
+   - Pending tasks that were never started are noted but get 0 hrs allocated
+   - If the session has no tasks at all → skip to Edge Cases
+   - Carried-over tasks from `worklog-state.json` (loaded in step 1) are merged at the top of this list with their `hours_so_far` shown alongside
 
 3. **Read today's commits.** Run:
    ```sh
