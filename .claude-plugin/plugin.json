@@ -1,0 +1,8 @@
+{
+  "name": "task-update",
+  "description": "End-of-session work logger — records Claude tasks, git commits, and hours worked to a global worklog with smart time distribution",
+  "author": {
+    "name": "Smit Parekh",
+    "email": "smitp@monovative.com"
+  }
+}
